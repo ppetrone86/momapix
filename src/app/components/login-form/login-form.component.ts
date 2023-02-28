@@ -23,8 +23,8 @@ export class LoginFormComponent implements OnInit {
 
   private initForm() {
     this.form = new FormGroup({
-      'username': new FormControl('pietropetrone', Validators.required),
-      'password': new FormControl('pietropetrone', Validators.required),
+      'username': new FormControl('', Validators.required),
+      'password': new FormControl('', Validators.required),
     });
   }
 

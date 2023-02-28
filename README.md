@@ -39,3 +39,4 @@ Per lo svolgimento della prova pratica richiesta sono state implementate le segu
 Per ragioni di rapidità alcuni dettagli non sono stati implementati. Per completare l'esercizio sarebbe opportuno:
 - integrare uno state manager per la gestione della sessione utente
 - implementare la paginazione delle immagini mostrate nella Gallery
+- implementare un handler per la gestione e la visualizzazione degli errori
