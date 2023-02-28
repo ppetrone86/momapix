@@ -1,0 +1,4 @@
+<form *ngIf="form != undefined" [formGroup]="form" class="flex items-center" (ngSubmit)="submit()">
+  <input type="text" placeholder="Search..." class="bg-gray-700 rounded-full px-3 py-1 text-sm focus:outline-none focus:shadow-outline-gray text-white" id="filter" formControlName="filter"/>
+  <button type="submit" class="bg-gray-600 hover:bg-gray-700 rounded-full px-3 py-1 text-sm text-gray-300 ml-2 focus:outline-none focus:shadow-outline-gray">Search</button>
+</form>

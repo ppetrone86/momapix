@@ -1,0 +1,33 @@
+<div *ngIf="!authService.isLogged; else logout">
+  <button
+    class="bg-gray-600 hover:bg-gray-700 rounded-full px-3 py-1 text-sm text-gray-300 focus:outline-none focus:shadow-outline-gray"
+    (click)="showModal = true">
+    Login
+  </button>
+
+  <!-- Modal -->
+  <div *ngIf="showModal" class="fixed z-10 inset-0 overflow-y-auto">
+    <div class="flex items-center justify-center min-h-screen">
+      <div class="relative bg-white w-96 mx-auto rounded shadow-lg">
+        <div class="flex flex-col p-4">
+          <app-login-form (userLoggedEvent)="showModal = false"></app-login-form>
+          <button class="absolute top-0 right-0 m-4 text-gray-400 hover:text-gray-600" (click)="showModal = false">
+            <svg class="h-6 w-6 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <title>Close</title>
+              <path
+                d="M14.348 14.849c.195.195.195.512 0 .707-.195.195-.512.195-.707 0L10 10.707l-3.646 3.646c-.195.195-.512.195-.707 0-.195-.195-.195-.512 0-.707L9.293 10 5.646 6.354c-.195-.195-.195-.512 0-.707.195-.195.512-.195.707 0L10 9.293l3.646-3.646c.195-.195.512-.195.707 0 .195.195.195.512 0 .707L10.707 10l3.646 3.646z"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #logout>
+  <app-logout-button></app-logout-button>
+</ng-template>
+

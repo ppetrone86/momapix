@@ -1,0 +1,19 @@
+<form *ngIf="form != undefined" [formGroup]="form" class="flex flex-col space-y-4" (ngSubmit)="submit()">
+  <label for="username" class="font-bold">Username</label>
+  <input type="username" id="username" formControlName="username"
+         class="border border-gray-400 p-2 rounded"
+         [class.border-red-500]="form.get('username')?.invalid && (form.get('username')?.dirty || form.get('username')?.touched)">
+  <div *ngIf="form.get('username')?.invalid && (form.get('username')?.dirty || form.get('username')?.touched)">
+    <span class="text-red-500">Username is required</span>
+  </div>
+  <label for="password" class="font-bold">Password</label>
+  <input type="password" id="password" formControlName="password"
+         class="border border-gray-400 p-2 rounded"
+         [class.border-red-500]="form.get('password')?.invalid && (form.get('password')?.dirty || form.get('password')?.touched)">
+  <div *ngIf="form.get('password')?.invalid && (form.get('password')?.dirty || form.get('password')?.touched)">
+    <span class="text-red-500">Password is required</span>
+  </div>
+  <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" [disabled]="form.invalid">
+    Login
+  </button>
+</form>

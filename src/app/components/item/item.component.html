@@ -1,0 +1,42 @@
+<div class="relative bg-white rounded-lg overflow-hidden shadow-md" (click)="showModal = !showModal" style="cursor: pointer;">
+  <img [src]="image.preview" alt="" class="w-full h-64 object-cover"
+       [class.opacity-0]="loading"
+       (load)="loading = false"
+  >
+  <div *ngIf="loading"
+       class="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center bg-white bg-opacity-75">
+    <div class="loader ease-linear rounded-full border-8 border-t-8 border-gray-200 h-32 w-32"></div>
+  </div>
+  <div class="absolute top-0 left-0 bg-gray-900 text-white text-xs px-2 py-1"> {{ image.license }} - {{ image.archive }}</div>
+  <div class="p-4">
+    <h3 class="font-bold text-xl mb-2">{{ image.category }}</h3>
+    <p class="text-gray-700 text-base">{{ image.xsize}}x{{image.ysize }}</p>
+  </div>
+</div>
+
+<div class="fixed z-50 inset-0 overflow-y-auto" *ngIf="showModal">
+  <div class="flex items-center justify-center min-h-screen">
+    <div class="bg-white rounded-lg overflow-hidden shadow-md flex w-5/6 h-5/6 relative">
+      <div class="w-7/12 p-4">
+        <img [src]="image?.image" alt="" class="w-full h-full object-contain">
+      </div>
+      <div class="w-5/12 p-4">
+        <ul>
+          <li><strong>ID:</strong> {{ item?.id }}</li>
+          <li><strong>License:</strong> {{ image?.license }}</li>
+          <li><strong>Archive:</strong> {{ image?.archive }}</li>
+          <li><strong>Category:</strong> {{ image?.category }}</li>
+          <li><strong>Keywords:</strong> {{ image?.keywords }}</li>
+          <li><strong>X-Size:</strong> {{ image?.xsize }}</li>
+          <li><strong>Y-Size:</strong> {{ image?.ysize }}</li>
+          <li><strong>Section:</strong> {{ image?.section }}</li>
+        </ul>
+        <button class="absolute bottom-0 right-0 mb-4 mr-4 px-4 py-2 text-white rounded-lg bg-gray-800" (click)="showModal = false">Close</button>
+        <button *ngIf="item.id == 174.3" class="absolute bottom-0 right-10 mb-4 mr-16 px-4 py-2 text-white rounded-lg bg-red-800" (click)="prepareDownload()">Download</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

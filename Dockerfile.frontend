@@ -1,0 +1,20 @@
+# Usa l'immagine ufficiale di Node.js come base per l'immagine
+FROM node:18.14.2-alpine AS build
+
+
+# Imposta la directory di lavoro all'interno del container
+WORKDIR /app
+
+# Copia i file necessari
+COPY package*.json ./
+
+# Esegui il comando per installare le dipendenze
+RUN npm install -g @angular/cli && npm install
+
+# Copia il codice sorgente
+COPY . .
+
+EXPOSE 4200
+
+# Avvia il server Angular
+CMD ["ng", "serve", "--host", "0.0.0.0"]

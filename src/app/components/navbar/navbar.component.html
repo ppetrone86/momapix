@@ -1,0 +1,10 @@
+<nav class="bg-gray-800 py-4">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+    <div class="flex items-center">
+      <app-search-form *ngIf="authService.isLogged"></app-search-form>
+    </div>
+    <div class="flex items-center">
+      <app-auth></app-auth>
+    </div>
+  </div>
+</nav>

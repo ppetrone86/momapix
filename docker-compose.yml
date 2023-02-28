@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+  proxy:
+    build:
+      context: .
+      dockerfile: Dockerfile.proxy
+    ports:
+      - "3000:3000"
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    ports:
+      - "4200:4200"
+    depends_on:
+      - proxy
+    volumes:
+      - /app/node_modules
+      - .:/app
