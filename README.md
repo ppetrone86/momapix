@@ -33,7 +33,7 @@ Per lo svolgimento della prova pratica richiesta sono state implementate le segu
 5. Al termine della preparazione dei container Docker avvierà l'applicazione su http://localhost:4200
 
 ## Extra
-[![Demo](assets/momapix_video.png)](assets/momapix_video.mov)
+[![Demo](assets/momapix_video.png)](assets/momapix_video.mp4)
 
 ## Considerazioni finali e migliorie future
 Per ragioni di rapidità alcuni dettagli non sono stati implementati. Per completare l'esercizio sarebbe opportuno:
