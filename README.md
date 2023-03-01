@@ -2,7 +2,7 @@
 
 Per lo svolgimento della prova pratica richiesta sono state implementate le seguenti componenti:
 
-- **Moma Frontend**, ossia un semplice client scritto in Angular che consente di eseguire le seguenti operazionie:
+- **Moma Frontend**, ossia un semplice client scritto in Angular che consente di eseguire le seguenti operazioni:
 
   - login/logout
   - search item
